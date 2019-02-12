@@ -1,0 +1,31 @@
+{
+  "name": "qaflow",
+  "version": "1.0.0",
+  "description": "Q&A System With React (Inspired By StackOverFlow)",
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server public",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "npx babel src --out-dir public --presets=@babel/preset-env,@babel/preset-react",
+    "build": "npx webpack --watch",
+    "dev-server": "webpack-dev-server"
+  },
+  "author": "mytuny",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "live-server": "^1.2.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "babel-loader": "^8.0.5",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  }
+}
