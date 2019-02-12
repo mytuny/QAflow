@@ -13,12 +13,24 @@ class QAFlow extends React.Component {
         "Text Cutting inside Large Select Option Dropdown"
       ]
     };
+    this.addNewQuestion = this.addNewQuestion.bind(this);
   }
+
+  addNewQuestion(question) {
+    this.setState((state, props) => {
+      let questions = state.questions;
+      questions.push(question);
+      return {
+        questions: questions
+      };
+    });
+  }
+
   render() {
     return (
       <div>
         <h1>QAflow</h1><small>Shoot Your Question!</small>
-        <Ask />
+        <Ask addNewQuestion={this.addNewQuestion} />
         <Questions questions={this.state.questions} />
       </div>
     );
