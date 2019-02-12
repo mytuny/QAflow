@@ -26,6 +26,7 @@
     "@babel/polyfill": "^7.2.5",
     "babel-loader": "^8.0.5",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react-dom": "^16.8.1",
+    "uuid": "^3.3.2"
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import QuestionModel from '../models/QuestionModel';
 
 export default class Ask extends React.Component {
   constructor(props) {
@@ -8,8 +9,11 @@ export default class Ask extends React.Component {
 
   handleAskFormSubmit(e) {
     e.preventDefault();
-    const question = e.target.elements.ask.value;
-    if (question) {
+    const title = e.target.elements.askTitle.value;
+    const text = e.target.elements.askText.value;
+    if (title && text) {
+      const question = new QuestionModel(title, text);
+      question.save();
       this.props.addNewQuestion(question);
     }
   }
@@ -17,7 +21,8 @@ export default class Ask extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleAskFormSubmit}>
-        <input type="text" name="ask" />
+        <input type="text" name="askTitle" />
+        <textarea name="askText"></textarea>
         <button type="submit">Ask</button>
       </form>
     );

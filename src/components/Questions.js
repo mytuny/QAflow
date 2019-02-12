@@ -12,7 +12,13 @@ export default class Questions extends React.Component {
         <h4>Questions</h4>
         <ol>
           {
-            this.props.questions.map((question, index) => <Question key={index} question={question} />)
+            this.props.questions.map((question, index) =>
+              <Question
+                key={index}
+                question={question}
+                showQuestion={this.props.showQuestion}
+              />
+            )
           }
         </ol>
       </div>
