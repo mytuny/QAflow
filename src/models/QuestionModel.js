@@ -17,9 +17,20 @@ export default class QuestionModel {
   }
 
   save() {
-    let questions = localStorage.getItem('questions');
-    if (!Array.isArray()) questions = [];
-    questions.push(this);
+    let questions = JSON.parse(localStorage.getItem('questions'));
+    if (!Array.isArray(questions)) questions = [];
+    const question = {
+      id: this.id,
+      questionTitle: this.questionTitle,
+      questionText: this.questionText,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt,
+      acceptedAnswer: this.acceptedAnswer,
+      votes: this.votes,
+      views: this.views,
+      answers: this.answers
+    };
+    questions.push(question);
     localStorage.setItem('questions', JSON.stringify(questions));
   }
 }

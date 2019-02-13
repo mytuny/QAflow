@@ -14,6 +14,7 @@ class QAFlow extends React.Component {
     };
     this.addNewQuestion = this.addNewQuestion.bind(this);
     this.showQuestion = this.showQuestion.bind(this);
+    this.updateState = this.updateState.bind(this);
     // Load Data
     const questionsData = localStorage.getItem('questions');
     if (questionsData) {
@@ -39,6 +40,16 @@ class QAFlow extends React.Component {
     });
   }
 
+  updateState() {
+    this.setState((state, props) => {
+      const questions = JSON.parse(localStorage.getItem('questions'));
+      let selectedQuestion = state.selectedQuestion;
+      const question = questions.find(q => q.id == selectedQuestion.id);
+      selectedQuestion = question;
+      return { questions, selectedQuestion };
+    });
+  }
+
   render() {
     return (
       <table>
@@ -50,7 +61,7 @@ class QAFlow extends React.Component {
               <Questions questions={this.state.questions} showQuestion={this.showQuestion} />
             </td>
             <td>
-              <QuestionPage question={this.state.selectedQuestion} />
+              <QuestionPage question={this.state.selectedQuestion} updateState={this.updateState} />
             </td>
           </tr>
         </tbody>
