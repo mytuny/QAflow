@@ -9,7 +9,7 @@ export default class AnswersList extends React.Component {
   render() {
     return (
       <div>
-        {this.props.question && this.props.question.answers.map(answer => <Answer key={answer.id} answer={answer} />)}
+        {this.props.question && this.props.question.answers.map(answer => <Answer key={answer.id} answer={answer} updateState={this.props.updateState} />)}
       </div>
     );
   }

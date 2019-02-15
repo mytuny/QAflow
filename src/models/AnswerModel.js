@@ -5,6 +5,10 @@ export default class AnswerModel {
     this.id = uuid();
     this.qid = questionId;
     this.answerText = answer;
+    this.votes = {
+      up: 0,
+      down: 0
+    };
     this.createdAt = new Date();
     this.updatedAt = new Date();
 
@@ -18,6 +22,7 @@ export default class AnswerModel {
       id: this.id,
       qid: this.qid,
       answerText: this.answerText,
+      votes: this.votes,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     };

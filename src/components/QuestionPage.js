@@ -21,7 +21,7 @@ export default class QuestionPage extends React.Component {
           <p>{this.props.question && this.props.question.questionText}</p>
         </div>
         *****
-        <AnswersList question={this.props.question} />
+        <AnswersList question={this.props.question} updateState={this.props.updateState} />
         <AnswerForm question={this.props.question} addNewAnswer={this.addNewAnswer} />
       </div>
     );
