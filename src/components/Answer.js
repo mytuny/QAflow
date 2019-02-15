@@ -5,6 +5,9 @@ export default class Answer extends React.Component {
     super(props);
     this.voteUp = this.voteUp.bind(this);
     this.voteDown = this.voteDown.bind(this);
+    this.setAccepted = this.setAccepted.bind(this);
+    this.isAccepted = this.isAccepted.bind(this);
+    this.isAcceptable = this.isAcceptable.bind(this);
   }
 
   voteUp() {
@@ -41,6 +44,32 @@ export default class Answer extends React.Component {
     this.props.updateState();
   }
 
+  setAccepted() {
+    let questions = JSON.parse(localStorage.getItem('questions'));
+    questions.map(question => {
+      if (question.id == this.props.answer.qid) {
+        question.acceptedAnswer = this.props.answer.id;
+      }
+      return question;
+    });
+    localStorage.setItem('questions', JSON.stringify(questions));
+    this.props.updateState();
+  }
+
+  isAccepted() {
+    let questions = JSON.parse(localStorage.getItem('questions'));
+    const question = questions.find(q => q.id == this.props.answer.qid);
+    if (question.acceptedAnswer == this.props.answer.id) return true;
+    return false;
+  }
+
+  isAcceptable() {
+    let questions = JSON.parse(localStorage.getItem('questions'));
+    const question = questions.find(q => q.id == this.props.answer.qid);
+    if (question.acceptedAnswer === null) return true;
+    return false;
+  }
+
   render() {
     return (
       <div>
@@ -48,6 +77,8 @@ export default class Answer extends React.Component {
         <b>{this.props.answer.votes.up - this.props.answer.votes.down}</b>
         <button onClick={this.voteDown}>-1</button>
         {this.props.answer.answerText}
+        {this.isAccepted() && <span>ACCEPTED</span>}
+        {this.isAcceptable() && <button onClick={this.setAccepted}>Accept</button>}
       </div>
     );
   }

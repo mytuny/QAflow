@@ -5,6 +5,8 @@ import Questions from './components/Questions';
 import Ask from './components/Ask';
 import QuestionPage from './components/QuestionPage';
 
+import './styles/style.css';
+
 class QAFlow extends React.Component {
   constructor(props) {
     super(props);
