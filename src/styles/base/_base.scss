@@ -5,4 +5,51 @@ html {
 body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: $l-size;
+  background: $bg;
+  color: $normal;
+}
+
+h1 {
+  font-size: $l-size;
+}
+
+h2 {
+  font-size: .8 * $l-size;
+}
+
+h4 {
+  font-size: $m-size;
+}
+
+ul {
+  list-style: none;
+}
+
+input, textarea {
+  -webkit-appearance: none;
+  margin: $sm-size $xs-size;
+  width: 100%;
+  border: 1px solid $light;
+  border-radius: $radius;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+  font-family: inherit;
+}
+
+button {
+  color: white;
+  font-size: $m-size;
+  padding: $sm-size $l-size;
+  border: none;
+  background: $secondary;
+  border-radius: $radius;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+p {
+  font-size: $m-size;
+  color: $normal;
 }

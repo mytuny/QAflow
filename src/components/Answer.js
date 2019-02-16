@@ -72,13 +72,23 @@ export default class Answer extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.voteUp}>+1</button>
-        <b>{this.props.answer.votes.up - this.props.answer.votes.down}</b>
-        <button onClick={this.voteDown}>-1</button>
-        {this.props.answer.answerText}
-        {this.isAccepted() && <span>ACCEPTED</span>}
-        {this.isAcceptable() && <button onClick={this.setAccepted}>Accept</button>}
+      <div className="questionPage__answer-block">
+        <div className="questionPage__answer">
+          <div className="questionPage__vote">
+            <div>{this.props.answer && <button className="btn-vote" onClick={this.voteUp}>+1</button>}</div>
+            <div className="questionPage__votesCount">
+              {this.props.answer && this.props.answer.votes.up - this.props.answer.votes.down}
+            </div>
+            <div>{this.props.answer && <button className="btn-vote" onClick={this.voteDown}>-1</button>}</div>
+            <div>
+              {this.isAccepted() && <span>ACCEPTED</span>}
+              {this.isAcceptable() && <button onClick={this.setAccepted}>Accept</button>}
+            </div>
+          </div>
+          <div>
+            <p>{this.props.answer.answerText}</p>
+          </div>
+        </div>
       </div>
     );
   }

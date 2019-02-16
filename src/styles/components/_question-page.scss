@@ -1,0 +1,37 @@
+.questionPage__top-bar {
+  width: 100%;
+  padding: $m-size;
+}
+
+.questionPage__title {
+  display: flex;
+}
+
+.questionPage__vote {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: $sm-size;
+  width: 20%;
+}
+
+.questionPage__title-right {
+  padding: 0 $sm-size;
+}
+
+.questionPage__votesCount {
+  font-size: $l-size;
+  text-align: center;
+}
+
+.questionPage__answer-block {
+  display: block;
+  width: 100%;
+  margin: $m-size auto;
+  padding: $sm-size;
+}
+
+.questionPage__answer {
+  display: flex;
+  border-bottom: solid 1px $light;
+}

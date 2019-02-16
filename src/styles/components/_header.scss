@@ -1,0 +1,16 @@
+header {
+  border-bottom: solid 1px $light;
+  height: 9rem;
+}
+
+.header__title {
+  font-size: $xl-size;
+  color: $primary;
+  margin: 0;
+}
+
+.header__subtitle {
+  display: block;
+  font-size: $m-size;
+  color: $normal;
+}

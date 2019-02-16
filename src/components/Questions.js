@@ -10,7 +10,7 @@ export default class Questions extends React.Component {
     return (
       <div>
         <h4>Questions</h4>
-        <ol>
+        <ul className="questions__list">
           {
             this.props.questions.map((question, index) =>
               <Question
@@ -20,7 +20,7 @@ export default class Questions extends React.Component {
               />
             )
           }
-        </ol>
+        </ul>
       </div>
     );
   }

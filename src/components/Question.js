@@ -13,10 +13,19 @@ export default class Question extends React.Component {
   render() {
     return (
       <li onClick={this.handleQuestionClick}>
-        <span>Votes: {this.props.question.votes.up - this.props.question.votes.down}</span> |
-        <span>Answers: {this.props.question.answers.length}</span> |
-        <span>Views: {this.props.question.views}</span> |
-        <b>{this.props.question.questionTitle}</b>
+        <div className="questions__leftStats">
+          <div className="questions__leftStats-item">
+            <span>{this.props.question.votes.up - this.props.question.votes.down}</span>
+            <span>votes</span>
+          </div>
+          <div className="questions__leftStats-item">
+            <span>{this.props.question.answers.length}</span>
+            <span>answers</span>
+          </div>
+        </div>
+        <div className="questions__rightText">
+          <h4>{this.props.question.questionTitle}</h4>
+        </div>
       </li>
     );
   }

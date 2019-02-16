@@ -1,0 +1,29 @@
+.questions__list {
+  font-size: $m-size;
+}
+
+.questions__list li {
+  width: 100%;
+  padding: $xs-size $m-size;
+  border-bottom: solid 1px $light;
+  display: flex;
+  cursor: pointer;
+}
+
+.questions__leftStats {
+  display: flex;
+  font-size: smaller;
+  width: 20%;
+  text-align: center;
+}
+
+.questions__leftStats-item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.questions__rightText {
+  padding: 0 $m-size;
+  color: darken($color: $normal, $amount: 10);
+}

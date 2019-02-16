@@ -21,8 +21,8 @@ export default class Ask extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleAskFormSubmit}>
-        <input type="text" name="askTitle" />
-        <textarea name="askText"></textarea>
+        <input className="m-input" type="text" name="askTitle" />
+        <textarea className="m-textarea" name="askText"></textarea>
         <button type="submit">Ask</button>
       </form>
     );

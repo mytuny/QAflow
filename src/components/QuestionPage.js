@@ -41,12 +41,19 @@ export default class QuestionPage extends React.Component {
   render() {
     return (
       <div>
-        <h2>
-          {this.props.question && <button onClick={this.voteUp}>+1</button>}
-          {this.props.question && <b>{this.props.question.votes.up - this.props.question.votes.down}</b>}
-          {this.props.question && <button onClick={this.voteDown}>-1</button>}
-          {this.props.question && this.props.question.questionTitle}
-        </h2>
+        <div className="questionPage__top-bar">
+          <button className="btn-secondary" onClick={this.props.returnBack}>Return Back To Questions List</button>
+        </div>
+        <div className="questionPage__title">
+          <div className="questionPage__vote">
+            <div>{this.props.question && <button className="btn-vote" onClick={this.voteUp}>+1</button>}</div>
+            <div className="questionPage__votesCount">{this.props.question && this.props.question.votes.up - this.props.question.votes.down}</div>
+            <div>{this.props.question && <button className="btn-vote" onClick={this.voteDown}>-1</button>}</div>
+          </div>
+          <div className="questionPage__title-right">
+            <h2>{this.props.question && this.props.question.questionTitle}</h2>
+          </div>
+        </div>
         <div>
           <p>{this.props.question && this.props.question.questionText}</p>
         </div>

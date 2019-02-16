@@ -1,5 +1,18 @@
 .container {
   max-width: 60rem;
   margin: 0 auto;
-  padding: $m-size;
+  padding: 0 $m-size;
+}
+
+.btn-secondary {
+  border: solid 1px $secondary;
+  background: $bg;
+  color: $primary;
+}
+
+.btn-vote {
+  border: none;
+  background: transparent;
+  color: $normal;
+  padding: $xs-size 0;
 }
