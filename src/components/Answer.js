@@ -1,4 +1,5 @@
 import React from 'react';
+import TextHandler from './TextHandler';
 
 export default class Answer extends React.Component {
   constructor(props) {
@@ -86,7 +87,9 @@ export default class Answer extends React.Component {
             </div>
           </div>
           <div>
-            <p>{this.props.answer.answerText}</p>
+            <p>
+              <TextHandler text={this.props.answer.answerText} />
+            </p>
           </div>
         </div>
       </div>
