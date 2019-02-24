@@ -14,7 +14,7 @@ export default class TextHandler extends React.Component {
     const code = text.substring(code_start, code_end);
     const pre_code = text.substring(0, code_start - 6);
     const post_code = text.substring(code_end + 8, text.length);
-
+    // TODO: repeat the previous steps until making sure all code block have been highlighted!!
     return (
       <div>
         <p>{pre_code}</p>
