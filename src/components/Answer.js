@@ -86,10 +86,8 @@ export default class Answer extends React.Component {
               {this.isAcceptable() && <button onClick={this.setAccepted}>Accept</button>}
             </div>
           </div>
-          <div>
-            <p>
-              <TextHandler text={this.props.answer.answerText} />
-            </p>
+          <div className="questionPage__answer_body">
+            <TextHandler text={this.props.answer.answerText} />
           </div>
         </div>
       </div>

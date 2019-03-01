@@ -35,3 +35,8 @@
   display: flex;
   border-bottom: solid 1px $light;
 }
+
+.questionPage__answer_body {
+  padding: $sm-size;
+  font-size: $m-size;
+}

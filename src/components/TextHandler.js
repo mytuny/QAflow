@@ -9,6 +9,7 @@ export default class TextHandler extends React.Component {
 
   highlightCode() {
     let text = this.props.text;
+    if( !this.codeExists(text) ) return text;
     const code_start = (text.indexOf('<code>')) + 6;
     const code_end = (text.indexOf('</code>')) - 1;
     const code = text.substring(code_start, code_end);
@@ -17,15 +18,15 @@ export default class TextHandler extends React.Component {
     // TODO: repeat the previous steps until making sure all code block have been highlighted!!
     return (
       <div>
-        <p>{pre_code}</p>
+        {pre_code}
         <CodeHighlighter>{code}</CodeHighlighter>
-        <p>{post_code}</p>
+        {post_code}
       </div>
     );
   }
 
   codeExists(text) {
-    if (text.indexOf('<code>') && text.indexOf('</code>')) return true;
+    if (text.indexOf('<code>') !== -1 && text.indexOf('</code>') !== -1) return true;
     return false;
   }
 
