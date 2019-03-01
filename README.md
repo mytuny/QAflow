@@ -1,4 +1,4 @@
-# Project Title
+# QAflow
 
 Q&A System With React (Inspired By StackOverFlow)
 
@@ -17,6 +17,8 @@ npm install
 ```
 Use the npm install command to install dependencies.
 
+### Available Scripts
+
 ```
 npm run build
 ```
@@ -33,6 +35,7 @@ Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 * [React](https://reactjs.org/) - JavaScript library
 * [Webpack](https://webpack.js.org/) - JavaScript module bundler
 * [Babel](https://babeljs.io/) - JavaScript compiler
+* [Sass](https://sass-lang.com/) - Style sheet language
 
 ## Contributing
 
@@ -40,7 +43,7 @@ Please feel free to contribute to this open source project. First timers are mor
 
 ## Authors
 
-* **Sofien N@@S** - [mytuny](https://github.com/mytuny) - [My Website](https://naas.tn)
+* **Sofien N@@S** - [My Github (mytuny)](https://github.com/mytuny) - [My Website](https://naas.tn)
 
 ## License
 
